@@ -24,4 +24,4 @@ def claim_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
     return state
 
 
-# huggingface/deepseek-ai/DeepSeek-V3.1:fireworks-ai
+# [huggingface/deepseek-ai/DeepSeek-V3.1:fireworks-ai] //can be used dor calling deepseek model from huggingface
