@@ -1,3 +1,4 @@
 from .gene_agent_inputstate import GeneAgentInputState
 from .gene_agent_overallstate import GeneAgentOverallState
-from .gene_agent_subgraph_state import GeneAgentSubgraphState
+from .gene_agent_single_gene_state import GeneAgentSingleGeneState
+from .gene_agent_gene_set import GeneAgentMultiGenesState
