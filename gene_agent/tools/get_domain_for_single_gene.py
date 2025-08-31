@@ -11,7 +11,19 @@ def get_domain_for_single_gene(gene_name):
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
-        return json.dumps(response.json().get("results",{}))
+        results = response.json().get("results",{})
+        domains_data = {
+            "gene_name": gene_name,
+            "domains": [
+                {
+                    "domain_name": result.get("domain_name"),
+                    "Number_of_Evidence": result.get("count")
+                }
+                for result in results
+            ]   
+        }
+
+        return [domains_data]
     else:
         return f"Error: Unable to fetch data"
 

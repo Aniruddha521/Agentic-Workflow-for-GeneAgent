@@ -1,8 +1,9 @@
 import os
 import dspy
 from dotenv import load_dotenv
-from gene_agent.states import GeneAgentOverallState
+from gene_agent.states import GeneAgentOverallState, ProcessState
 from gene_agent.prompt_signatures import ClaimsGeneratorSignature
+from gene_agent.tools import get_pubmed_articles
 
 dspy.settings.configure(cache=None)
 def claim_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
@@ -17,7 +18,13 @@ def claim_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
         response = generator(
             query=state.claims,
         )
-    state.original_process_names = response.claim.original_process_name
+    process_name = response.claim.original_process_name
+    process_details = get_pubmed_articles(process_name)
+    process = ProcessState(
+        process_names = process_name,
+        detail = process_details
+    )
+    state.original_process_names = process
     state.original_analytical_narrative = response.claim.original_analytical_narratives
     state.genes = response.claim.genes
     

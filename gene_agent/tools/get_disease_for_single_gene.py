@@ -11,7 +11,19 @@ def get_disease_for_single_gene(gene_name):
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
-        return json.dumps(response.json().get("results",{}))
+        results = response.json().get("results",{})
+        diseases_data = {
+            "gene_name": gene_name,
+            "diseases": [
+                {
+                    "disease_caused": result.get("disease_name"),
+                    "Number_of_Evidence": result.get("count")
+                }
+                for result in results
+            ]   
+        }
+
+        return [diseases_data]
     else:
         return f"Error: Unable to fetch data"
 

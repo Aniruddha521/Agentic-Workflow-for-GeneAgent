@@ -1,0 +1,523 @@
+'[
+  {
+    "gene_name": "HRAS",
+    "complex_ac": "CPX-395",
+    "complex_name": "GTPase HRAS - Son of sevenless homolog 1 complex",
+    "count": 1
+  },
+  {
+    "gene_name": "HRAS",
+    "complex_ac": "CPX-413",
+    "complex_name": "GTPase Hras - Son of sevenless homolog 1 complex",
+    "count": 1
+  }
+]'
+
+
+'[
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "SHC1",
+    "count": 9
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ERBIN",
+    "count": 8
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "HSP90AA1",
+    "count": 7
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "SRC",
+    "count": 7
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ERRFI1",
+    "count": 7
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PIK3R1",
+    "count": 6
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "GRB2",
+    "count": 5
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ESR1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ITGB4",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTK2",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "JAK2",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "CD82",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PLCG1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "NF2",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "MUC1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "GRB7",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ERBB3",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ERBB4",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PICK1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "HSP90B1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "IL6ST",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "JUP",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTK2B",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "L1CAM",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTPN11",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "MATK",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "RAF1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ORF7B",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "TGFA",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PAK1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "STUB1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PIK3R2",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "SORL1",
+    "count": 4
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "MYC",
+    "count": 3
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "MUC4",
+    "count": 3
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "CDC37",
+    "count": 3
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTK6",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "ESRRB",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "NCK1",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "CDKAL1",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTPN6",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "FAM241B",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "STX6",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "CEPT1",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTPRA",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "FBXW7",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "SURF4",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "CPNE3",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "PTPRT",
+    "count": 2
+  },
+  {
+    "gene1_name": "ERBB2",
+    "gene2_name": "FES",
+    "count": 2
+  }
+]'
+
+
+'[
+  {
+    "term": "MAPK signaling pathway",
+    "overlapping genes": "ERBB4,ERBB2,KRAS,FGFR4,HRAS,FGFR2",
+    "database": "KEGG_2021_Human"
+  },
+  {
+    "term": "SHC1 events in ERBB2 signaling",
+    "overlapping genes": "ERBB4,ERBB2,KRAS,HRAS",
+    "database": "BioPlanet_2019"
+  },
+  {
+    "term": "PI3K-Akt signaling pathway",
+    "overlapping genes": "ERBB4,ERBB2,KRAS,FGFR4,HRAS,FGFR2",
+    "database": "KEGG_2021_Human"
+  },
+  {
+    "term": "FRS2-mediated cascade",
+    "overlapping genes": "KRAS,FGFR4,HRAS,FGFR2",
+    "database": "BioPlanet_2019"
+  },
+  {
+    "term": "Signaling by FGFR mutants",
+    "overlapping genes": "KRAS,FGFR4,HRAS,FGFR2",
+    "database": "BioPlanet_2019"
+  }
+]'
+
+'PMID: 18050474\nTitle: RTK/Ras/MAPK signaling.\nAbstract: Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are used repeatedly during metazoan development to control many different biological processes. In the nematode Caenorhabditis elegans, two different RTKs (LET-23/EGFR and EGL-15/FGFR) are known to stimulate LET-60/Ras and a MAPK cascade consisting of the kinases LIN-45/Raf, MEK-2/MEK and MPK-1/ERK. This Ras/MAPK cascade is required for multiple developmental events, including induction of vulval, uterine, spicule, P12 and excretory duct cell fates, control of sex myoblast migration and axon guidance, and promotion of germline meiosis. Studies in C. elegans have provided much insight into the basic framework of this RTK/Ras/MAPK signaling pathway, its regulation, how it elicits cell-type specific responses, and how it interacts with other signaling pathways such as the Wnt and Notch pathways.\nPMID: 28589435\nTitle: Epigenetic regulation of RTK signaling.\nAbstract: Receptor tyrosine kinase (RTK) signaling cascades coordinate intracellular signaling in response to growth factors, chemokines, and other extracellular stimuli to control fundamental biological processes such as cellular proliferation, metabolism, and survival. Hyperactivation of pathways associated with growth factor signaling (e.g., RTK and downstream effectors including Ras, PI3K/AKT, and Raf) is a frequent event in human cancers, which uncouples ligand-mediated activation with signal transduction. While the contributions of direct genomic events are well understood as causative agents of hyperactive signal transduction, other non-heritable genomic modifications promote the activation of growth factor-associated signaling cascades. In this review, we highlight epigenomic mechanisms by which hyperactivation of RTK-associated signaling cascades occurs and may contribute to cancer.\nPMID: 33346130\nTitle: Relationships between DNA repair and RTK-mediated signaling pathways.\nAbstract: Receptor Tyrosine Kinases (RTK) are an important family involved in numerous signaling pathways essential for proliferation, cell survival, transcription or cell-cycle regulation. Their role and involvement in cancer cell survival have been widely described in the literature, and are generally associated with overexpression and/or excessive activity in the cancer pathology. Because of these characteristics, RTKs are relevant targets in the fight against cancer. In the last decade, increasingly numerous works describe the role of RTK signaling in the modulation of DNA repair, thus providing evidence of the relationship between RTKs and the protein actors in the repair pathways. In this review, we propose a summary of RTKs described as potential modulators of double-stranded DNA repair pathways in order to put forward new lines of research aimed at the implementation of new therapeutic strategies targeting both DNA repair pathways and RTK-mediated signaling pathways.\nPMID: 39915447\nTitle: Hepatocellular carcinoma: signaling pathways and therapeutic advances.\nAbstract: Liver cancer represents a major global health concern, with projections indicating that the number of new cases could surpass 1 million annually by 2025. Hepatocellular carcinoma (HCC) constitutes around 90% of liver cancer cases and is primarily linked to factors incluidng aflatoxin, hepatitis B (HBV) and C (HCV), and metabolic disorders. There are no obvious symptoms in the early stage of HCC, which often leads to delays in diagnosis. Therefore, HCC patients usually present with tumors in advanced and incurable stages. Several signaling pathways are dis-regulated in HCC and cause uncontrolled cell propagation, metastasis, and recurrence of HCC. Beyond the frequently altered and therapeutically targeted receptor tyrosine kinase (RTK) pathways in HCC, pathways involved in cell differentiation, telomere regulation, epigenetic modification and stress response also provide therapeutic potential. Investigating the key signaling pathways and their inhibitors is pivotal for achieving therapeutic advancements in the management of HCC. At present, the primary therapeutic approaches for advanced HCC are tyrosine kinase inhibitors (TKI), immune checkpoint inhibitors (ICI), and combination regimens. New trials are investigating combination therapies involving ICIs and TKIs or anti-VEGF (endothelial growth factor) therapies, as well as combinations of two immunotherapy regimens. The outcomes of these trials are expected to revolutionize HCC management across all stages. Here, we provide here a comprehensive review of cellular signaling pathways, their therapeutic potential, evidence derived from late-stage clinical trials in HCC and discuss the concepts underlying earlier clinical trials, biomarker identification, and the development of more effective therapeutics for HCC.\nPMID: 33992782\nTitle: RAF-MEK-ERK pathway in cancer evolution and treatment.\nAbstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway involved in cell proliferation and survival. The three-layered MAPK signaling cascade is initiated upon RTK and RAS activation. Three RAF isoforms ARAF, BRAF and CRAF, and their downstream MEK1/2 and ERK1/2 kinases constitute a coherently orchestrated signaling module that directs a range of physiological functions. Genetic alterations in this pathway are among the most prevalent in human cancers, which consist of numerous hot-spot mutations such as BRAF\n'
+
+
+
+
+'[
+  {
+    "gene_name": "SOS1",
+    "complex_ac": "CPX-395",
+    "complex_name": "GTPase HRAS - Son of sevenless homolog 1 complex",
+    "count": 1
+  },
+  {
+    "gene_name": "SOS1",
+    "complex_ac": "CPX-413",
+    "complex_name": "GTPase Hras - Son of sevenless homolog 1 complex",
+    "count": 1
+  }
+]'
+
+
+'[
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1907",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  },
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1914",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  }
+]'
+
+'[
+  {
+    "gene_name": "CD3D",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3D",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  }
+]'
+
+
+'[
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1907",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  },
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1914",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  }
+]'
+
+'[
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3E",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6482",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6581",
+    "complex_name": "Alpha-beta T cell receptor complex, TRBC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6582",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC1 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "CD3G",
+    "complex_ac": "CPX-6603",
+    "complex_name": "Gamma-delta T cell receptor complex, TRGC2 variant",
+    "count": 1
+  },
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1907",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  },
+  {
+    "gene_name": "FADD",
+    "complex_ac": "CPX-1914",
+    "complex_name": "Ripoptosome",
+    "count": 1
+  }
+]'

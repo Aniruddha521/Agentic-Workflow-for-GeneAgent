@@ -1,12 +1,10 @@
 import json
 import requests
 
-def get_pathway_for_gene_set(gene_set):
+def get_pathway_for_gene_set(gene_list):
     """
     The returned values are Rank, Term name, P-value, Odds ratio, Combined score, Overlapping genes, Adjusted p-value, Old p-value, Old adjusted p-value
     """
-    gene_set = gene_set.replace(" ","")
-    gene_list = gene_set.split(",")
 
     ENRICHR_URL_ADD = 'http://maayanlab.cloud/Enrichr/addList'
     payload = {
@@ -39,7 +37,7 @@ def get_pathway_for_gene_set(gene_set):
     for key, value in dic_sorted.items():
         pathway_analysis.append({"term": key, "overlapping genes": value[1], "database": value[2]})
         # print(pathway_analysis)
-    return json.dumps(pathway_analysis[:5])
+    return pathway_analysis[:5]
 
 get_pathway_for_gene_set_doc = {
     "name": "get_pathway_for_gene_set",
