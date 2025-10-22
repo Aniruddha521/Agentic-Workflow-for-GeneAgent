@@ -6,7 +6,7 @@ from gene_agent.states import (
     GeneAgentOverallState
 )
 from gene_agent.nodes import (
-    claim_generator,
+    narrative_generator,
     subgraphs_summarization,
     gene_set_data_fetching,
     single_gene_data_fetching,
@@ -26,7 +26,7 @@ graph_builder = StateGraph(
 )
 
 
-graph_builder.add_node("generator_node", claim_generator)
+graph_builder.add_node("generator_node", narrative_generator)
 graph_builder.add_node("single_gene_data_fetching", single_gene_data_fetching)
 graph_builder.add_node("gene_set_data_fetching", gene_set_data_fetching)
 graph_builder.add_node("summarize_tools_results", subgraphs_summarization)

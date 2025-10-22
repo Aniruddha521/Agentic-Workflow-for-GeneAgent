@@ -6,7 +6,7 @@ from gene_agent.prompt_signatures import ClaimsGeneratorSignature
 from gene_agent.tools import get_pubmed_articles
 
 dspy.settings.configure(cache=None)
-def claim_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
+def narrative_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
     load_dotenv()
     api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     generator = dspy.ChainOfThought(ClaimsGeneratorSignature)
