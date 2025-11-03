@@ -36,7 +36,6 @@ def tool_calling_condition(state : GeneAgentOverallState):
                 GeneAgentSingleGeneState(
                     claims=state.claims,
                     process_names=state.original_process_names,
-                    analytical_narrative=state.original_analytical_narrative,
                     attached_tool=tool,
                     gene=gene
                 )
@@ -50,7 +49,6 @@ def tool_calling_condition(state : GeneAgentOverallState):
                 "gene_set_data_fetching", GeneAgentMultiGenesState(
                     claims=state.claims,
                     process_names=state.original_process_names,
-                    analytical_narrative=state.original_analytical_narrative,
                     attached_tool = tool,
                     genes=state.genes
                 )

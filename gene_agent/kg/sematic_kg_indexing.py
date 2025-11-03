@@ -1,52 +1,39 @@
-from typing import List, Tuple, Dict
-import numpy as np
 from sentence_transformers import SentenceTransformer
+import numpy as np
 import faiss
-import heapq
-from dataclasses import dataclass
-from .inmemory_kg import InMemoryKG
 
-@dataclass
-class SemanticKGIndex:
-    kg: InMemoryKG
-    model_name: str = "all-MiniLM-L6-v2"
-    model: SentenceTransformer = None
-    index: faiss.IndexFlatIP = None
-    triple_texts: List[str] = None
 
-    def __post_init__(self):
-        self.model = SentenceTransformer(self.model_name)
-        self.triple_texts = []
+class SematicKGIndexing:
+    def __init__(self, model_name: str = "sentence-transformers/embeddinggemma-300m-medical"):
+        self.model = SentenceTransformer(model_name)
         self.index = None
+        self.embeddings = []
+        self.docs = []
 
-    def build_index(self):
-        triples = self.kg.export_triples()
-        self.triple_texts = [f"{s} {p} {o}" for s, p, o in triples]
-        if not self.triple_texts:
-            print("No triples to index.")
-            return
-        embeddings = self.model.encode(self.triple_texts, convert_to_numpy=True, show_progress_bar=False)
-        # normalize for cosine-similarity with inner product
-        faiss.normalize_L2(embeddings)
-        dim = embeddings.shape[1]
-        self.index = faiss.IndexFlatIP(dim)
-        self.index.add(embeddings)
-        print(f"Built FAISS index with {len(self.triple_texts)} items (dim={dim}).")
+    def index_docs(self, docs: list):
+        print("---"*20)
+        passages = [f"{d['node']} | {d['relation']} | {d['text']}" for d in docs]
+        print(passages)
+        print("---"*20)
+        new_embeddings = self.model.encode(passages, convert_to_numpy=True)
+        self.embeddings.append(new_embeddings)
+        self.docs.extend(docs)
 
-    def query(self, question: str, top_k: int = 8) -> List[Tuple[float, str, Tuple[str, str, str]]]:
-        """Return list of (score, triple_text, triple_tuple)"""
         if self.index is None:
-            raise RuntimeError("Index not built. Call build_index() first.")
-        q_emb = self.model.encode([question], convert_to_numpy=True)
-        faiss.normalize_L2(q_emb)
-        D, I = self.index.search(q_emb, top_k)
-        results = []
-        all_triples = self.kg.export_triples()
-        for score, idx in zip(D[0], I[0]):
-            if idx < 0 or idx >= len(self.triple_texts):
-                continue
-            tri_text = self.triple_texts[idx]
-            tri_tuple = all_triples[idx]
-            results.append((float(score), tri_text, tri_tuple))
-        return results
+            dimension = new_embeddings.shape[1]
+            self.index = faiss.IndexFlatL2(dimension)
 
+        self.index.add(new_embeddings)
+
+        return self.index
+
+    def search(self, queries: list, top_k: int = 10):
+        query_embedding = self.model.encode(queries, convert_to_numpy=True)
+        faiss.normalize_L2(query_embedding)
+        distances, indices = self.index.search(query_embedding, top_k)
+
+        results = []
+        for dist, idx in zip(distances[0], indices[0]):
+            results.append((dist, self.docs[idx]))
+
+        return results

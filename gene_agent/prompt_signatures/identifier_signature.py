@@ -1,7 +1,7 @@
 import dspy
-from .claim import Claim
+from .entities import Entities
 
-class ClaimsGeneratorSignature(dspy.Signature):
+class IdentifierSignature(dspy.Signature):
     """
     You are tasked with generating claims from a given list of genes.
     Your output must strictly follow the required JSON schema with only the fields specified below.
@@ -14,6 +14,6 @@ class ClaimsGeneratorSignature(dspy.Signature):
                 and individual features need to be generated.
                 """
         )
-    claim: Claim = dspy.OutputField(
+    entities: Entities = dspy.OutputField(
             desc="The generated claims regarding the pathways and individual feature of the genes."
         )

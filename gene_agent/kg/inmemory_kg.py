@@ -1,12 +1,11 @@
 from collections import defaultdict, deque
-from typing import List, Tuple, Dict
+from typing import List, Tuple
 import os
 import re
 import numpy as np
 import networkx as nx
-import matplotlib.pyplot as plt
 from pyvis.network import Network
-# from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 import webbrowser
 import os
 
@@ -15,6 +14,7 @@ class InMemoryKG:
         self.graph = nx.MultiDiGraph()
         self.triples = set()
         self.aliases = defaultdict(set)
+        self.model = SentenceTransformer("cambridgeltl/SapBERT-from-PubMedBERT-fulltext")
 
     def add_node(self, node_id: str, **attrs):
         self.graph.add_node(node_id, **attrs)
@@ -30,7 +30,7 @@ class InMemoryKG:
     def export_triples(self) -> List[Tuple[str, str, str]]:
         return list(self.triples)
 
-    def _node_candidates_from_question(self, question: str) -> List[str]:
+    def node_candidates_from_question(self, question: str) -> List[str]:
         q = question
         found = set()
 
@@ -53,37 +53,89 @@ class InMemoryKG:
     
     def extract_relevant_sentences_from_node(self,
                                              node_id: str,
-                                             query_terms: List[str],
-                                             model=None,
+                                             query_terms,
                                              top_n: int = 3) -> List[Tuple[float, str]]:
-        
+        """
+        Return list of (score, sentence) from node.node_id's 'details' or 'text' using semantic search.
+        query_terms can be a list or a string. If model is None, will try to use self.model if present.
+        """
+
         node = self.graph.nodes.get(node_id, {})
-        text = node.get("details") or ""
+        text = node.get("details") or node.get("text") or ""
         if not text:
             return []
 
         sentences = [s.strip() for s in re.split(r'(?<=[\.\?\!])\s+', text) if s.strip()]
+        if not sentences:
+            return []
 
-        if model is not None:
-            try:
-                q_text = " ".join(query_terms)
-                emb_q = model.encode([q_text], convert_to_numpy=True, show_progress_bar=False)
-                emb_sent = model.encode(sentences, convert_to_numpy=True, show_progress_bar=False)
-                emb_q = emb_q / np.linalg.norm(emb_q, axis=1, keepdims=True)
-                emb_sent = emb_sent / np.linalg.norm(emb_sent, axis=1, keepdims=True)
-                sims = (emb_sent @ emb_q.T).squeeze()
-                scored = sorted([(float(sims[i]), sentences[i]) for i in range(len(sentences))], reverse=True)
-                return scored[:top_n]
-            except Exception:
-                return [(0.0, s) for s in sentences[:top_n]]
+        # use provided model or fallback to self.model if available
 
-        return [(0.0, s) for s in sentences[:top_n]]
+        # normalize query_terms
+        if isinstance(query_terms, (list, tuple)):
+            q_text = " ".join(map(str, query_terms))
+        else:
+            q_text = str(query_terms)
+
+        # quick substring matching (prefer exact substring hits)
+        # q_tokens = [t.lower() for t in re.findall(r"[A-Za-z0-9_\-]+", q_text)]
+        # if q_tokens:
+        #     hits = []
+        #     for s in sentences:
+        #         s_low = s.lower()
+        #         if any(tok in s_low for tok in q_tokens):
+        #             hits.append((1.0, s))
+        #     if hits:
+        #         return hits[:top_n]
+
+        # if self.model is None:
+        #     return [(0.0, s) for s in sentences[:top_n]]
+
+        try:
+            emb_q = self.model.encode([q_text], convert_to_numpy=True, show_progress_bar=False)
+            emb_sent = self.model.encode(sentences, convert_to_numpy=True, show_progress_bar=False)
+
+            emb_q = np.asarray(emb_q)
+            emb_sent = np.asarray(emb_sent)
+
+            if emb_q.ndim == 1:
+                emb_q = emb_q.reshape(1, -1)
+            if emb_sent.ndim == 1:
+                emb_sent = emb_sent.reshape(1, -1)
+
+            # if emb_sent.shape[1] != emb_q.shape[1]:
+            #     return [(0.0, s) for s in sentences[:top_n]]
+
+            q_norms = np.linalg.norm(emb_q, axis=1, keepdims=True)
+            q_norms[q_norms == 0] = 1.0
+            s_norms = np.linalg.norm(emb_sent, axis=1, keepdims=True)
+            s_norms[s_norms == 0] = 1.0
+
+            emb_q = emb_q / q_norms
+            emb_sent = emb_sent / s_norms
+
+            sims = (emb_sent @ emb_q.T).squeeze()
+            sims = np.asarray(sims).reshape(-1)[: len(sentences)]
+
+            scored = sorted([(float(sims[i]), sentences[i]) for i in range(len(sentences))], reverse=True)
+            return scored[:top_n]
+        except Exception as e:
+            return None#[(0.0, s) for s in sentences[:top_n]]
+
+    def is_doc_node_id(self, nid: str) -> bool:
+        nd = self.graph.nodes.get(nid, {})
+        if not nd:
+            return False
+        if "details" in nd or "text" in nd:
+            return True
+        t = str(nd.get("type", "")).lower()
+        return t in ("details", "detail description", "document")
     
     def extract_evidence_subgraph(self,
                                   entities: List[str],
+                                  query_terms: List[str] = None,
                                   max_hops: int = 2,
                                   include_document_snippets: bool = True,
-                                  model=None,
                                   doc_snippet_top_n: int = 3):
         
         seeds = list(entities)
@@ -93,46 +145,83 @@ class InMemoryKG:
             q.append((s, 0))
             dist[s] = 0
         seen = set(seeds)
-        evidence = set()
-        doc_snippets = {}  # node_id -> list[(score, sentence)]
+
+        evidence = defaultdict(lambda: defaultdict(set))
+        doc_snippets = {}
 
         while q:
             node, d = q.popleft()
             if d >= max_hops:
                 continue
+
+            node_is_doc = self.is_doc_node_id(node)
+
+            # outgoing edges
             for _, tgt, data in self.graph.out_edges(node, data=True):
                 relation = data.get("relation", "")
-                evidence.add((node, relation, tgt))
-                # if target looks like a document and we want snippets, extract
-                tgt_node = self.graph.nodes.get(tgt, {})
-                is_doc = ("text" in tgt_node) or (tgt_node.get("type", "").lower() in ("details", "document"))
-                if is_doc and include_document_snippets:
-                    # query_terms = entities + relation + node labels (you might tune this)
-                    query_terms = list(entities) + [relation] + [node, tgt]
-                    snippets = self.extract_relevant_sentences_from_node(tgt, query_terms, model=model, top_n=doc_snippet_top_n)
+
+                tgt_is_doc = self.is_doc_node_id(tgt)
+
+                # If either the source (node) or the target (tgt) is a document node,
+                # do NOT add that pair to evidence. We still may extract snippets if target is doc.
+                if (not node_is_doc) and (not tgt_is_doc):
+                    evidence[node][relation].add(tgt)
+
+                if tgt_is_doc and include_document_snippets:
+                    snippets = self.extract_relevant_sentences_from_node(tgt, query_terms, top_n=doc_snippet_top_n)
                     if snippets:
                         doc_snippets[tgt] = snippets
+
                 if tgt not in seen:
                     seen.add(tgt)
                     q.append((tgt, d + 1))
                     dist[tgt] = min(dist.get(tgt, 1e9), d + 1)
-            # incoming
+
             for src, _, data in self.graph.in_edges(node, data=True):
                 relation = data.get("relation", "")
-                evidence.add((src, relation, node))
-                src_node = self.graph.nodes.get(src, {})
-                is_doc = ("text" in src_node) or (src_node.get("type", "").lower() in ("details", "document"))
-                if is_doc and include_document_snippets:
-                    query_terms = list(entities) + [relation] + [node, src]
-                    snippets = self.extract_relevant_sentences_from_node(src, query_terms, model=model, top_n=doc_snippet_top_n)
+
+                src_is_doc = self.is_doc_node_id(src)
+
+                # if (not node_is_doc) and (not src_is_doc):
+                #     evidence[node][relation].add(src)
+
+                if src_is_doc and include_document_snippets:
+                    query_terms = list(entities) + [relation, node, src]
+                    snippets = self.extract_relevant_sentences_from_node(src, query_terms, top_n=doc_snippet_top_n)
                     if snippets:
                         doc_snippets[src] = snippets
+
                 if src not in seen:
                     seen.add(src)
                     q.append((src, d + 1))
                     dist[src] = min(dist.get(src, 1e9), d + 1)
 
-        return evidence, doc_snippets, dist
+        evidence_out = {}
+        for n, relmap in evidence.items():
+            if not relmap:
+                continue
+            evidence_out[n] = {rel: list(neis) for rel, neis in relmap.items() if neis}
+
+        return evidence_out, doc_snippets, dist
+
+    def flatten_kg_dict(self, kg_dict):
+        docs = []
+        for node, props in kg_dict.items():
+            for rel, values in props.items():
+                if isinstance(values, list):
+                    for v in values:
+                        docs.append({
+                            "node": node,
+                            "relation": rel,
+                            "text": v
+                        })
+                elif isinstance(values, str):
+                    docs.append({
+                        "node": node,
+                        "relation": rel,
+                        "text": values
+                    })
+        return docs
 
     def find_common_neighbors_of_type(self, nodes: List[str], node_type_label: str = "Pathway") -> List[str]:
         common = None
@@ -174,88 +263,3 @@ class InMemoryKG:
 
         if open_browser:
             webbrowser.open('file://' + os.path.realpath(output_file))
-
-
-def demo():
-    kg = InMemoryKG()
-
-    # Add example nodes with types (fictional toy data)
-    kg.add_node("ERBB2", type="Gene")
-    kg.add_node("ERBB4", type="Gene")
-    kg.add_node("MAPK_pathway", type="Pathway")
-    kg.add_node("PI3K_AKT_pathway", type="Pathway")
-    kg.add_node("Breast_Carcinoma", type="Disease")
-
-    # Add relations (triples)
-    kg.add_relation("ERBB2", "participates_in", "MAPK_pathway")
-    kg.add_relation("ERBB2", "participates_in", "PI3K_AKT_pathway")
-    kg.add_relation("ERBB4", "participates_in", "MAPK_pathway")
-    kg.add_relation("ERBB4", "participates_in", "PI3K_AKT_pathway")
-    kg.add_relation("ERBB2", "associated_with", "Breast_Carcinoma")
-    kg.add_relation("ERBB4", "associated_with", "Breast_Carcinoma")
-
-    # aliasing
-    kg.add_alias("ERBB2", "ERBB2")
-    kg.add_alias("ERBB4", "ERBB4")
-    kg.add_alias("Breast_Carcinoma", "breast cancer")
-
-    # Build semantic index
-    idx = SemanticKGIndex(kg)
-    idx.build_index()
-
-    # Example question (from your user scenario)
-    question = (
-        "Disease caused by ERBB2 and ERBB4 genes and in which pathways we can find the both of the genes "
-        "and will it increases the disease causing factor?"
-    )
-
-    # 1) Entity linking + BFS evidence extraction
-    entities = kg._node_candidates_from_question(question)
-    print("Entities found:", entities)
-    evidence, dist = kg.extract_evidence_subgraph(entities, max_hops=2)
-    ranked_by_graph = []
-    for (s, p, o) in evidence:
-        # simple score: shorter distance preferred
-        d = min(dist.get(s, 10), dist.get(o, 10))
-        score = 10.0 / (1 + d)
-        ranked_by_graph.append((score, (s, p, o)))
-    ranked_by_graph.sort(reverse=True, key=lambda x: x[0])
-
-    # 2) Semantic retrieval over triple sentences
-    sem_results = idx.query(question, top_k=8)
-    print("\nTop semantic matches (score, triple_text):")
-    for score, txt, tri in sem_results:
-        print(f"{score:.4f}\t{txt}")
-
-    # Compose final candidate facts: take top semantic + top graph-scored
-    sem_triples = [r[2] for r in sem_results]
-    graph_triples = [t for _, t in ranked_by_graph[:8]]
-    # merge preserving order and uniqueness
-    seen = set()
-    merged = []
-    for t in sem_triples + graph_triples:
-        if t not in seen:
-            merged.append(t); seen.add(t)
-
-    facts = triples_to_sentences(merged[:10])
-    common_pathways = kg.find_common_neighbors_of_type(entities, "Pathway")
-
-    print("\nFacts to pass to LLM:\n")
-    for f in facts:
-        print(f)
-
-    # Build prompt
-    prompt = build_prompt_from_facts(question, facts, common_pathways)
-
-    # Optionally call OpenAI
-    if OPENAI_AVAILABLE and os.getenv("OPENAI_API_KEY"):
-        print("\nCalling OpenAI... (this requires OPENAI_API_KEY set)")
-        answer = ask_openai_with_prompt(prompt)
-        print("\nLLM answer:\n", answer)
-    else:
-        print("\nOpenAI not configured. Here is the prompt you can send to an LLM:\n")
-        print(prompt)
-
-
-if __name__ == "__main__":
-    demo()

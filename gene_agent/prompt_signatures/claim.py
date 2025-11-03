@@ -1,13 +1,17 @@
 import dspy
 
 class Claim(dspy.Signature):
-
-    original_analytical_narratives: str = dspy.OutputField(
-            desc="The generated claims regarding the pathways and individual feature of the genes."
+    """A claim about pathways associated with genes or vice-versa."""
+    generated_claim: str = dspy.OutputField(
+            desc="""
+            The corrected claims regarding the pathways and individual feature of the genes.
+            Make sure that the corrected claims are accurate and consistent with the provided context.
+            Make sure the length of the corrected claims and query are nearly similar/same.
+            """
         )
-    original_process_name: str = dspy.OutputField(
-            desc="The name of pathways associated with the claim."
-        )
-    genes: list[str] = dspy.OutputField(
-            desc="The list of genes for which claims about their pathways and individual features are generated."
+    justification: str = dspy.OutputField( 
+            desc="""
+            A detailed justification explaining how the correction were derived from the provided context.
+            This should include references to specific pieces of information from the context that support the correction.
+            """
         )
