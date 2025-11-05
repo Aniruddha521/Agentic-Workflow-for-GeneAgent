@@ -10,7 +10,7 @@ from gene_agent.nodes import (
     subgraphs_summarization,
     gene_set_data_fetching,
     single_gene_data_fetching,
-    verify_and_modify_claims,
+    verify_claims,
     narrative_generator
 )
 from gene_agent.conditional_edges import (
@@ -32,7 +32,7 @@ graph_builder.add_node("single_gene_data_fetching", single_gene_data_fetching)
 graph_builder.add_node("gene_set_data_fetching", gene_set_data_fetching)
 graph_builder.add_node("summarize_tools_results", subgraphs_summarization)
 graph_builder.add_node("generator", narrative_generator)
-graph_builder.add_node("proofreader",verify_and_modify_claims)
+graph_builder.add_node("proofreader",verify_claims)
 
 graph_builder.add_edge(START, "identifier_node")
 graph_builder.add_conditional_edges(

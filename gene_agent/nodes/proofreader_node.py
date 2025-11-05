@@ -1,0 +1,34 @@
+import os
+import dspy
+from dotenv import load_dotenv
+from gene_agent.states import GeneAgentOverallState
+from gene_agent.prompt_signatures import ProofReaderSignature
+from gene_agent.kg import extract_index_context
+
+dspy.settings.configure(cache=None)
+def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
+    load_dotenv()
+    print("---"*20)
+    results = extract_index_context(state.index, state.claims)
+    print("---"*20)
+    state.results = results
+    api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+    proofreader = dspy.ChainOfThought(ProofReaderSignature)
+    llm = dspy.LM(
+            model="huggingface/openai/gpt-oss-120b", 
+            api_key=api_key
+    )
+    with dspy.context(lm=llm):
+        response = proofreader(
+            retrieved_context = results,
+            justification = state.analytical_narrative,
+            query=state.claims
+        )
+    state.feedback = response.response.feedback
+    state.proofreader_pass = response.response.is_correct
+    state.proofreader_count += 1
+    
+    return state
+
+
+# [huggingface/deepseek-ai/DeepSeek-V3.1:fireworks-ai] //can be used dor calling deepseek model from huggingface

@@ -16,6 +16,7 @@ def narrative_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
     with dspy.context(lm=llm):
         response = generator(
             retrieved_context = state.results,
+            feedback = state.feedback,
             query=state.claims
         )
     state.claims = response.claims.generated_claim

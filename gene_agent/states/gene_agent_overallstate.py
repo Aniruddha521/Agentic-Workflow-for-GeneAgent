@@ -17,4 +17,6 @@ class GeneAgentOverallState(BaseModel):
     genes: list[str] = []
     index: Any = None
     results: list[dict] = []
+    feedback: str = ""
+    proofreader_pass: bool = True
     proofreader_count: int = 0
