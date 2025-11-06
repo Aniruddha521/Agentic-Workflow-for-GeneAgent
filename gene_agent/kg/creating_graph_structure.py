@@ -1,6 +1,4 @@
-import networkx as nx
 from .inmemory_kg import InMemoryKG
-from .sematic_kg_indexing import SematicKGIndexing
 from gene_agent.states import GeneAgentOverallState
 
 graph = InMemoryKG()

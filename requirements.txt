@@ -1,5 +1,16 @@
 langchain
 langgraph
+langgraph-cli[inmem]
 pydantic
 dspy-ai
 huggingface_hub
+faiss-cpu
+transformers
+torch
+sentence-transformers
+numpy
+pandas
+scikit-learn
+networkx
+matplotlib
+pyvis
