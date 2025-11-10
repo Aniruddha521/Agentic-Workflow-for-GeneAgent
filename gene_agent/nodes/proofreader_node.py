@@ -16,7 +16,7 @@ def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
     api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     proofreader = dspy.ChainOfThought(ProofReaderSignature)
     llm = dspy.LM(
-            model="huggingface/deepseek-ai/DeepSeek-R1:novita", 
+            model="huggingface/openai/gpt-oss-120b", 
             api_key=api_key
     )
     with dspy.context(lm=llm):
