@@ -15,6 +15,7 @@ class GeneAgentOverallState(BaseModel):
     curated_context: Annotated[Any, context_reducer] = None
     pathway_context: Annotated[list, pathway_context_reducer] = None
     genes: list[str] = []
+    intents: list[str] = []
     index: Any = None
     results: list[dict] = []
     feedback: str = ""

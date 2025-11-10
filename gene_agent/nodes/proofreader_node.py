@@ -9,13 +9,14 @@ dspy.settings.configure(cache=None)
 def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
     load_dotenv()
     print("---"*20)
+    print("results")
     results = extract_index_context(state.index, state.claims)
     print("---"*20)
     state.results = results
     api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     proofreader = dspy.ChainOfThought(ProofReaderSignature)
     llm = dspy.LM(
-            model="huggingface/openai/gpt-oss-120b", 
+            model="huggingface/deepseek-ai/DeepSeek-R1:novita", 
             api_key=api_key
     )
     with dspy.context(lm=llm):
@@ -31,4 +32,7 @@ def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
     return state
 
 
-# [huggingface/deepseek-ai/DeepSeek-V3.1:fireworks-ai] //can be used dor calling deepseek model from huggingface
+# [huggingface/deepseek-ai/DeepSeek-V3.2-Exp:novita] //can be used for calling deepseek V3.2 model from huggingface
+# [huggingface/deepseek-ai/DeepSeek-R1:novita] //can be used for calling deepseek R1 model from huggingface
+# [huggingface/openai/gpt-oss-120b] //can be used for calling gpt-oss model from huggingface
+# [huggingface/Qwen/Qwen3-Next-80B-A3B-Instruct:novita] //can be used for calling Qwen3-Next-80B-A3B-Instruct model from huggingface
