@@ -10,5 +10,8 @@ def subgraphs_summarization(state: GeneAgentOverallState) -> GeneAgentOverallSta
     #         for _, result in results
     #     ]
     state.results = results
+    # print("---"*20)
+    # print(results)
+    # print("---"*20)
     state.index = (index, docs)
     return state

@@ -52,12 +52,12 @@ class SematicKGIndexing:
         distances, indices = self.index.search(q, top_k)
 
         results = []
-        for dist, idx in zip(distances[0], indices[0]):
-            results.append((float(dist), self.docs[idx]))
+        for _, idx in zip(distances[0], indices[0]):
+            results.append(self.docs[idx])
 
         return results
 
-    def range_search(self, queries: list, epsilon: float = 0.6):
+    def range_search(self, queries: list, epsilon: float = 0.55):
         q_emb = self.model.encode(queries, convert_to_numpy=True).astype("float32")
         faiss.normalize_L2(q_emb)
 

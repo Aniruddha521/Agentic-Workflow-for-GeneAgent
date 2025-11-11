@@ -4,6 +4,8 @@ from .claim import Claim
 class ClaimGeneratorSignature(dspy.Signature):
     """
     You are tasked with modifying/correctifying query from a the provided context and feedback.
+    You must answer ONLY using the provided context. 
+    Do NOT use prior knowledge.
     Make sure the length of the corrected claims and query are nearly similar/same.
     You don't assume anything beyond the provided context.
     Use this feedback to correctify the claims in the query and does not repeat the same mistakes.

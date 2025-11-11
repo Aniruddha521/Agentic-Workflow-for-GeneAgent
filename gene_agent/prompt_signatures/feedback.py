@@ -8,13 +8,13 @@ class Feedback(dspy.Signature):
     """
     feedback: str = dspy.OutputField(
             desc="""
-            Feedback on the generated claims regarding their correctness based on the provided context
-            and justification.
+            Feedback on the generated claims regarding their correctness based on the provided context.
             """
         )
     is_correct: bool = dspy.OutputField( 
             desc="""
             A boolean field indicating whether the generated claims are completely correct (`True`)
-            or not (`False`) based on the provided context and justification.
+            or not (`False`) based on the provided context.
+            If there is any incorrect or missing fact then output (`False`).
             """
         )

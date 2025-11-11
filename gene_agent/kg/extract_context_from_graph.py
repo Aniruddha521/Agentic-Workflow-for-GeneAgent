@@ -16,6 +16,6 @@ def extract_graph_context(graph: InMemoryKG, query: list) -> list[tuple]:
     docs.extend(node_docs)
     sem = SematicKGIndexing()
     index = sem.index_docs(docs)
-    results = sem.range_search([query], epsilon=0.7)
+    results = sem.range_search([query], epsilon=0.6)
     
     return results, index, docs

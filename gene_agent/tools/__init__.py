@@ -11,3 +11,4 @@ from .get_pubmed_articles import *
 from .get_disease_for_single_gene import *
 from .get_domain_for_single_gene import *
 from .get_gene_summary_for_single_gene import *
+from .compare_queries import *
