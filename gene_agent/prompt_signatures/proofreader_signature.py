@@ -28,13 +28,13 @@ class ProofReaderSignature(dspy.Signature):
                 or missing entities(e.g. genes, process, disease, domains, complex, etc) or information.
                 """
         )
-    # justification: str = dspy.InputField(
-    #         desc="""
-    #             The justification contains the reasoning behind the generated response.
-    #             Your task is to verify the claim and give feedback based on the justification 
-    #             and provided context.
-    #             """
-    #     )
+    justification: str = dspy.InputField(
+            desc="""
+                The justification contains the reasoning behind the generated response.
+                Your task is to verify the claim and give feedback based on the justification 
+                and provided context.
+                """
+        )
     response: Feedback = dspy.OutputField(
             desc="""
             The feedback on the generated claims regarding their correctness based on the provided context.

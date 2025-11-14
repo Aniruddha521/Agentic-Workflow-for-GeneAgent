@@ -47,7 +47,7 @@ def create_kg_structure(state: GeneAgentOverallState) -> InMemoryKG:
                 )
                 graph.add_relation(
                     complex["complex_ac"], 
-                    "contains_gene", 
+                    "involves_gene", 
                     gene, 
                     evidences=complex.get("num_of_evidence", 0)
                 )
@@ -76,7 +76,7 @@ def create_kg_structure(state: GeneAgentOverallState) -> InMemoryKG:
             graph.add_node(pathway.get("term"), type="pathway")
             graph.add_node(pathway.get("database"), type="database")
             graph.add_relation(gene, "involved_in", pathway.get("term"))
-            graph.add_relation(pathway.get("term"), "contains", gene)
+            graph.add_relation(pathway.get("term"), "involves", gene)
             graph.add_relation(
                 pathway.get("term"), 
                 "confirmed_by_database", 
@@ -88,5 +88,5 @@ def create_kg_structure(state: GeneAgentOverallState) -> InMemoryKG:
                 pathway.get("term")
             )
     # graph.plot_interactive(output_file="knowledge_graph.html", open_browser=True)
-    
+    # graph.save_graph("knowledge_graph.graphml")
     return graph

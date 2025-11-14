@@ -18,6 +18,7 @@ class GeneAgentOverallState(BaseModel):
     genes: list[str] = []
     intents: list[str] = []
     index: Any = None
+    graph: Any = None
     results: list[dict] = []
     feedback: str = ""
     proofreader_pass: bool = False

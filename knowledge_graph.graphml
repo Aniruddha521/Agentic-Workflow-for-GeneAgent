@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="details" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="RTK signaling">
+      <data key="d0">process</data>
+      <data key="d1">PMID: 18050474
+Title: RTK/Ras/MAPK signaling.
+Abstract: Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are used repeatedly during metazoan development to control many different biological processes. In the nematode Caenorhabditis elegans, two different RTKs (LET-23/EGFR and EGL-15/FGFR) are known to stimulate LET-60/Ras and a MAPK cascade consisting of the kinases LIN-45/Raf, MEK-2/MEK and MPK-1/ERK. This Ras/MAPK cascade is required for multiple developmental events, including induction of vulval, uterine, spicule, P12 and excretory duct cell fates, control of sex myoblast migration and axon guidance, and promotion of germline meiosis. Studies in C. elegans have provided much insight into the basic framework of this RTK/Ras/MAPK signaling pathway, its regulation, how it elicits cell-type specific responses, and how it interacts with other signaling pathways such as the Wnt and Notch pathways.
+PMID: 28589435
+Title: Epigenetic regulation of RTK signaling.
+Abstract: Receptor tyrosine kinase (RTK) signaling cascades coordinate intracellular signaling in response to growth factors, chemokines, and other extracellular stimuli to control fundamental biological processes such as cellular proliferation, metabolism, and survival. Hyperactivation of pathways associated with growth factor signaling (e.g., RTK and downstream effectors including Ras, PI3K/AKT, and Raf) is a frequent event in human cancers, which uncouples ligand-mediated activation with signal transduction. While the contributions of direct genomic events are well understood as causative agents of hyperactive signal transduction, other non-heritable genomic modifications promote the activation of growth factor-associated signaling cascades. In this review, we highlight epigenomic mechanisms by which hyperactivation of RTK-associated signaling cascades occurs and may contribute to cancer.
+PMID: 33346130
+Title: Relationships between DNA repair and RTK-mediated signaling pathways.
+Abstract: Receptor Tyrosine Kinases (RTK) are an important family involved in numerous signaling pathways essential for proliferation, cell survival, transcription or cell-cycle regulation. Their role and involvement in cancer cell survival have been widely described in the literature, and are generally associated with overexpression and/or excessive activity in the cancer pathology. Because of these characteristics, RTKs are relevant targets in the fight against cancer. In the last decade, increasingly numerous works describe the role of RTK signaling in the modulation of DNA repair, thus providing evidence of the relationship between RTKs and the protein actors in the repair pathways. In this review, we propose a summary of RTKs described as potential modulators of double-stranded DNA repair pathways in order to put forward new lines of research aimed at the implementation of new therapeutic strategies targeting both DNA repair pathways and RTK-mediated signaling pathways.
+PMID: 39915447
+Title: Hepatocellular carcinoma: signaling pathways and therapeutic advances.
+Abstract: Liver cancer represents a major global health concern, with projections indicating that the number of new cases could surpass 1 million annually by 2025. Hepatocellular carcinoma (HCC) constitutes around 90% of liver cancer cases and is primarily linked to factors incluidng aflatoxin, hepatitis B (HBV) and C (HCV), and metabolic disorders. There are no obvious symptoms in the early stage of HCC, which often leads to delays in diagnosis. Therefore, HCC patients usually present with tumors in advanced and incurable stages. Several signaling pathways are dis-regulated in HCC and cause uncontrolled cell propagation, metastasis, and recurrence of HCC. Beyond the frequently altered and therapeutically targeted receptor tyrosine kinase (RTK) pathways in HCC, pathways involved in cell differentiation, telomere regulation, epigenetic modification and stress response also provide therapeutic potential. Investigating the key signaling pathways and their inhibitors is pivotal for achieving therapeutic advancements in the management of HCC. At present, the primary therapeutic approaches for advanced HCC are tyrosine kinase inhibitors (TKI), immune checkpoint inhibitors (ICI), and combination regimens. New trials are investigating combination therapies involving ICIs and TKIs or anti-VEGF (endothelial growth factor) therapies, as well as combinations of two immunotherapy regimens. The outcomes of these trials are expected to revolutionize HCC management across all stages. Here, we provide here a comprehensive review of cellular signaling pathways, their therapeutic potential, evidence derived from late-stage clinical trials in HCC and discuss the concepts underlying earlier clinical trials, biomarker identification, and the development of more effective therapeutics for HCC.
+PMID: 33992782
+Title: RAF-MEK-ERK pathway in cancer evolution and treatment.
+Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway involved in cell proliferation and survival. The three-layered MAPK signaling cascade is initiated upon RTK and RAS activation. Three RAF isoforms ARAF, BRAF and CRAF, and their downstream MEK1/2 and ERK1/2 kinases constitute a coherently orchestrated signaling module that directs a range of physiological functions. Genetic alterations in this pathway are among the most prevalent in human cancers, which consist of numerous hot-spot mutations such as BRAF
+</data>
+    </node>
+    <node id="PMID: 18050474&#10;Title: RTK/Ras/MAPK signaling.&#10;Abstract: Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are used repeatedly during metazoan development to control many different biological processes. In the nematode Caenorhabditis elegans, two different RTKs (LET-23/EGFR and EGL-15/FGFR) are known to stimulate LET-60/Ras and a MAPK cascade consisting of the kinases LIN-45/Raf, MEK-2/MEK and MPK-1/ERK. This Ras/MAPK cascade is required for multiple developmental events, including induction of vulval, uterine, spicule, P12 and excretory duct cell fates, control of sex myoblast migration and axon guidance, and promotion of germline meiosis. Studies in C. elegans have provided much insight into the basic framework of this RTK/Ras/MAPK signaling pathway, its regulation, how it elicits cell-type specific responses, and how it interacts with other signaling pathways such as the Wnt and Notch pathways.&#10;PMID: 28589435&#10;Title: Epigenetic regulation of RTK signaling.&#10;Abstract: Receptor tyrosine kinase (RTK) signaling cascades coordinate intracellular signaling in response to growth factors, chemokines, and other extracellular stimuli to control fundamental biological processes such as cellular proliferation, metabolism, and survival. Hyperactivation of pathways associated with growth factor signaling (e.g., RTK and downstream effectors including Ras, PI3K/AKT, and Raf) is a frequent event in human cancers, which uncouples ligand-mediated activation with signal transduction. While the contributions of direct genomic events are well understood as causative agents of hyperactive signal transduction, other non-heritable genomic modifications promote the activation of growth factor-associated signaling cascades. In this review, we highlight epigenomic mechanisms by which hyperactivation of RTK-associated signaling cascades occurs and may contribute to cancer.&#10;PMID: 33346130&#10;Title: Relationships between DNA repair and RTK-mediated signaling pathways.&#10;Abstract: Receptor Tyrosine Kinases (RTK) are an important family involved in numerous signaling pathways essential for proliferation, cell survival, transcription or cell-cycle regulation. Their role and involvement in cancer cell survival have been widely described in the literature, and are generally associated with overexpression and/or excessive activity in the cancer pathology. Because of these characteristics, RTKs are relevant targets in the fight against cancer. In the last decade, increasingly numerous works describe the role of RTK signaling in the modulation of DNA repair, thus providing evidence of the relationship between RTKs and the protein actors in the repair pathways. In this review, we propose a summary of RTKs described as potential modulators of double-stranded DNA repair pathways in order to put forward new lines of research aimed at the implementation of new therapeutic strategies targeting both DNA repair pathways and RTK-mediated signaling pathways.&#10;PMID: 39915447&#10;Title: Hepatocellular carcinoma: signaling pathways and therapeutic advances.&#10;Abstract: Liver cancer represents a major global health concern, with projections indicating that the number of new cases could surpass 1 million annually by 2025. Hepatocellular carcinoma (HCC) constitutes around 90% of liver cancer cases and is primarily linked to factors incluidng aflatoxin, hepatitis B (HBV) and C (HCV), and metabolic disorders. There are no obvious symptoms in the early stage of HCC, which often leads to delays in diagnosis. Therefore, HCC patients usually present with tumors in advanced and incurable stages. Several signaling pathways are dis-regulated in HCC and cause uncontrolled cell propagation, metastasis, and recurrence of HCC. Beyond the frequently altered and therapeutically targeted receptor tyrosine kinase (RTK) pathways in HCC, pathways involved in cell differentiation, telomere regulation, epigenetic modification and stress response also provide therapeutic potential. Investigating the key signaling pathways and their inhibitors is pivotal for achieving therapeutic advancements in the management of HCC. At present, the primary therapeutic approaches for advanced HCC are tyrosine kinase inhibitors (TKI), immune checkpoint inhibitors (ICI), and combination regimens. New trials are investigating combination therapies involving ICIs and TKIs or anti-VEGF (endothelial growth factor) therapies, as well as combinations of two immunotherapy regimens. The outcomes of these trials are expected to revolutionize HCC management across all stages. Here, we provide here a comprehensive review of cellular signaling pathways, their therapeutic potential, evidence derived from late-stage clinical trials in HCC and discuss the concepts underlying earlier clinical trials, biomarker identification, and the development of more effective therapeutics for HCC.&#10;PMID: 33992782&#10;Title: RAF-MEK-ERK pathway in cancer evolution and treatment.&#10;Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway involved in cell proliferation and survival. The three-layered MAPK signaling cascade is initiated upon RTK and RAS activation. Three RAF isoforms ARAF, BRAF and CRAF, and their downstream MEK1/2 and ERK1/2 kinases constitute a coherently orchestrated signaling module that directs a range of physiological functions. Genetic alterations in this pathway are among the most prevalent in human cancers, which consist of numerous hot-spot mutations such as BRAF&#10;">
+      <data key="d0">detail description</data>
+    </node>
+    <node id="ERBB4">
+      <data key="d0">gene</data>
+    </node>
+    <node id="MAPK signaling pathway">
+      <data key="d0">pathway</data>
+    </node>
+    <node id="KEGG_2021_Human">
+      <data key="d0">database</data>
+    </node>
+    <node id="ERBB2">
+      <data key="d0">gene</data>
+    </node>
+    <node id="KRAS">
+      <data key="d0">gene</data>
+    </node>
+    <node id="FGFR4">
+      <data key="d0">gene</data>
+    </node>
+    <node id="HRAS">
+      <data key="d0">gene</data>
+    </node>
+    <node id="FGFR2">
+      <data key="d0">gene</data>
+    </node>
+    <node id="SHC1 events in ERBB2 signaling">
+      <data key="d0">pathway</data>
+    </node>
+    <node id="BioPlanet_2019">
+      <data key="d0">database</data>
+    </node>
+    <node id="PI3K-Akt signaling pathway">
+      <data key="d0">pathway</data>
+    </node>
+    <node id="FRS2-mediated cascade">
+      <data key="d0">pathway</data>
+    </node>
+    <node id="Signaling by FGFR mutants">
+      <data key="d0">pathway</data>
+    </node>
+    <edge source="RTK signaling" target="PMID: 18050474&#10;Title: RTK/Ras/MAPK signaling.&#10;Abstract: Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are used repeatedly during metazoan development to control many different biological processes. In the nematode Caenorhabditis elegans, two different RTKs (LET-23/EGFR and EGL-15/FGFR) are known to stimulate LET-60/Ras and a MAPK cascade consisting of the kinases LIN-45/Raf, MEK-2/MEK and MPK-1/ERK. This Ras/MAPK cascade is required for multiple developmental events, including induction of vulval, uterine, spicule, P12 and excretory duct cell fates, control of sex myoblast migration and axon guidance, and promotion of germline meiosis. Studies in C. elegans have provided much insight into the basic framework of this RTK/Ras/MAPK signaling pathway, its regulation, how it elicits cell-type specific responses, and how it interacts with other signaling pathways such as the Wnt and Notch pathways.&#10;PMID: 28589435&#10;Title: Epigenetic regulation of RTK signaling.&#10;Abstract: Receptor tyrosine kinase (RTK) signaling cascades coordinate intracellular signaling in response to growth factors, chemokines, and other extracellular stimuli to control fundamental biological processes such as cellular proliferation, metabolism, and survival. Hyperactivation of pathways associated with growth factor signaling (e.g., RTK and downstream effectors including Ras, PI3K/AKT, and Raf) is a frequent event in human cancers, which uncouples ligand-mediated activation with signal transduction. While the contributions of direct genomic events are well understood as causative agents of hyperactive signal transduction, other non-heritable genomic modifications promote the activation of growth factor-associated signaling cascades. In this review, we highlight epigenomic mechanisms by which hyperactivation of RTK-associated signaling cascades occurs and may contribute to cancer.&#10;PMID: 33346130&#10;Title: Relationships between DNA repair and RTK-mediated signaling pathways.&#10;Abstract: Receptor Tyrosine Kinases (RTK) are an important family involved in numerous signaling pathways essential for proliferation, cell survival, transcription or cell-cycle regulation. Their role and involvement in cancer cell survival have been widely described in the literature, and are generally associated with overexpression and/or excessive activity in the cancer pathology. Because of these characteristics, RTKs are relevant targets in the fight against cancer. In the last decade, increasingly numerous works describe the role of RTK signaling in the modulation of DNA repair, thus providing evidence of the relationship between RTKs and the protein actors in the repair pathways. In this review, we propose a summary of RTKs described as potential modulators of double-stranded DNA repair pathways in order to put forward new lines of research aimed at the implementation of new therapeutic strategies targeting both DNA repair pathways and RTK-mediated signaling pathways.&#10;PMID: 39915447&#10;Title: Hepatocellular carcinoma: signaling pathways and therapeutic advances.&#10;Abstract: Liver cancer represents a major global health concern, with projections indicating that the number of new cases could surpass 1 million annually by 2025. Hepatocellular carcinoma (HCC) constitutes around 90% of liver cancer cases and is primarily linked to factors incluidng aflatoxin, hepatitis B (HBV) and C (HCV), and metabolic disorders. There are no obvious symptoms in the early stage of HCC, which often leads to delays in diagnosis. Therefore, HCC patients usually present with tumors in advanced and incurable stages. Several signaling pathways are dis-regulated in HCC and cause uncontrolled cell propagation, metastasis, and recurrence of HCC. Beyond the frequently altered and therapeutically targeted receptor tyrosine kinase (RTK) pathways in HCC, pathways involved in cell differentiation, telomere regulation, epigenetic modification and stress response also provide therapeutic potential. Investigating the key signaling pathways and their inhibitors is pivotal for achieving therapeutic advancements in the management of HCC. At present, the primary therapeutic approaches for advanced HCC are tyrosine kinase inhibitors (TKI), immune checkpoint inhibitors (ICI), and combination regimens. New trials are investigating combination therapies involving ICIs and TKIs or anti-VEGF (endothelial growth factor) therapies, as well as combinations of two immunotherapy regimens. The outcomes of these trials are expected to revolutionize HCC management across all stages. Here, we provide here a comprehensive review of cellular signaling pathways, their therapeutic potential, evidence derived from late-stage clinical trials in HCC and discuss the concepts underlying earlier clinical trials, biomarker identification, and the development of more effective therapeutics for HCC.&#10;PMID: 33992782&#10;Title: RAF-MEK-ERK pathway in cancer evolution and treatment.&#10;Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway involved in cell proliferation and survival. The three-layered MAPK signaling cascade is initiated upon RTK and RAS activation. Three RAF isoforms ARAF, BRAF and CRAF, and their downstream MEK1/2 and ERK1/2 kinases constitute a coherently orchestrated signaling module that directs a range of physiological functions. Genetic alterations in this pathway are among the most prevalent in human cancers, which consist of numerous hot-spot mutations such as BRAF&#10;" id="0">
+      <data key="d2">details</data>
+    </edge>
+    <edge source="ERBB4" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="ERBB4" target="SHC1 events in ERBB2 signaling" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="ERBB4" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="ERBB4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="0">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="1">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="2">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="3">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="4">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="5">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="ERBB2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="KRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="FGFR4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="HRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="MAPK signaling pathway" target="FGFR2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="0">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="1">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="2">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="3">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="4">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="5">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="1">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="2">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="3">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="4">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="KEGG_2021_Human" target="PI3K-Akt signaling pathway" id="5">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="ERBB2" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="ERBB2" target="SHC1 events in ERBB2 signaling" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="ERBB2" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="KRAS" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="KRAS" target="SHC1 events in ERBB2 signaling" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="KRAS" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="KRAS" target="FRS2-mediated cascade" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="KRAS" target="Signaling by FGFR mutants" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR4" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR4" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR4" target="FRS2-mediated cascade" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR4" target="Signaling by FGFR mutants" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="HRAS" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="HRAS" target="SHC1 events in ERBB2 signaling" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="HRAS" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="HRAS" target="FRS2-mediated cascade" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="HRAS" target="Signaling by FGFR mutants" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR2" target="MAPK signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR2" target="PI3K-Akt signaling pathway" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR2" target="FRS2-mediated cascade" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="FGFR2" target="Signaling by FGFR mutants" id="0">
+      <data key="d2">involved_in</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="ERBB4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="BioPlanet_2019" id="0">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="BioPlanet_2019" id="1">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="BioPlanet_2019" id="2">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="BioPlanet_2019" id="3">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="ERBB2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="KRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="SHC1 events in ERBB2 signaling" target="HRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="SHC1 events in ERBB2 signaling" id="0">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="SHC1 events in ERBB2 signaling" id="1">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="SHC1 events in ERBB2 signaling" id="2">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="SHC1 events in ERBB2 signaling" id="3">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="FRS2-mediated cascade" id="0">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="FRS2-mediated cascade" id="1">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="FRS2-mediated cascade" id="2">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="FRS2-mediated cascade" id="3">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="Signaling by FGFR mutants" id="0">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="Signaling by FGFR mutants" id="1">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="Signaling by FGFR mutants" id="2">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="BioPlanet_2019" target="Signaling by FGFR mutants" id="3">
+      <data key="d2">provide_evidence_for</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="ERBB4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="0">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="1">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="2">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="3">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="4">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="5">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="ERBB2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="KRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="FGFR4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="HRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="PI3K-Akt signaling pathway" target="FGFR2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="KRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="BioPlanet_2019" id="0">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="BioPlanet_2019" id="1">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="BioPlanet_2019" id="2">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="BioPlanet_2019" id="3">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="FGFR4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="HRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="FRS2-mediated cascade" target="FGFR2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="KRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="BioPlanet_2019" id="0">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="BioPlanet_2019" id="1">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="BioPlanet_2019" id="2">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="BioPlanet_2019" id="3">
+      <data key="d2">confirmed_by_database</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="FGFR4" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="HRAS" id="0">
+      <data key="d2">contains</data>
+    </edge>
+    <edge source="Signaling by FGFR mutants" target="FGFR2" id="0">
+      <data key="d2">contains</data>
+    </edge>
+  </graph>
+</graphml>

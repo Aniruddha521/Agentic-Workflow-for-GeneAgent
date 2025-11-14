@@ -4,7 +4,7 @@ langgraph-cli[inmem]
 pydantic
 dspy-ai
 huggingface_hub
-faiss-cpu
+faiss-gpu-cu12
 transformers
 torch
 sentence-transformers

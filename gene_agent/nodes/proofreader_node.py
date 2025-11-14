@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from gene_agent.states import GeneAgentOverallState
 from gene_agent.prompt_signatures import ProofReaderSignature
 from gene_agent.kg import extract_index_context
-from gene_agent.tools import find_difference
+from gene_agent.tools import find_difference, merge_context
 
 dspy.settings.configure(cache=None)
 def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
@@ -13,6 +13,13 @@ def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
     
     results = extract_index_context(state.index, query, type='cos')
     state.results.extend(results)
+
+    print("---"*20)
+    print("verify")
+    print(state.results)
+    print("---"*20)
+
+    state.results = merge_context(state.graph, state.results)
     api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     proofreader = dspy.ChainOfThought(ProofReaderSignature)
     llm = dspy.LM(
@@ -22,18 +29,18 @@ def verify_claims(state: GeneAgentOverallState) -> GeneAgentOverallState:
     with dspy.context(lm=llm):
         response = proofreader(
             retrieved_context = state.results,
-            # justification = state.analytical_narrative,
+            justification = state.analytical_narrative,
             query=state.claims
         )
     state.feedback = response.response.feedback
     state.proofreader_pass = response.response.is_correct
-    state.proofreader_count += 1
     print("---"*20)
     print("proofreader")
     print(query)
-    print(results)
+    print(state.results)
     print(state.proofreader_pass)
     print("---"*20)
+    state.proofreader_count += 1
     return state
 
 
