@@ -88,5 +88,5 @@ def create_kg_structure(state: GeneAgentOverallState) -> InMemoryKG:
                 pathway.get("term")
             )
     # graph.plot_interactive(output_file="knowledge_graph.html", open_browser=True)
-    # graph.save_graph("knowledge_graph.graphml")
+    graph.save_graph("knowledge_graph.graphml")
     return graph

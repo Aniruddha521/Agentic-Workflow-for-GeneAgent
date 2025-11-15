@@ -78,7 +78,7 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">involved_in</data>
     </edge>
     <edge source="MAPK signaling pathway" target="ERBB4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="MAPK signaling pathway" target="KEGG_2021_Human" id="0">
       <data key="d2">confirmed_by_database</data>
@@ -99,19 +99,19 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">confirmed_by_database</data>
     </edge>
     <edge source="MAPK signaling pathway" target="ERBB2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="MAPK signaling pathway" target="KRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="MAPK signaling pathway" target="FGFR4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="MAPK signaling pathway" target="HRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="MAPK signaling pathway" target="FGFR2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="KEGG_2021_Human" target="MAPK signaling pathway" id="0">
       <data key="d2">provide_evidence_for</data>
@@ -213,7 +213,7 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">involved_in</data>
     </edge>
     <edge source="SHC1 events in ERBB2 signaling" target="ERBB4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="SHC1 events in ERBB2 signaling" target="BioPlanet_2019" id="0">
       <data key="d2">confirmed_by_database</data>
@@ -228,13 +228,13 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">confirmed_by_database</data>
     </edge>
     <edge source="SHC1 events in ERBB2 signaling" target="ERBB2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="SHC1 events in ERBB2 signaling" target="KRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="SHC1 events in ERBB2 signaling" target="HRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="BioPlanet_2019" target="SHC1 events in ERBB2 signaling" id="0">
       <data key="d2">provide_evidence_for</data>
@@ -273,7 +273,7 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">provide_evidence_for</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="ERBB4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="KEGG_2021_Human" id="0">
       <data key="d2">confirmed_by_database</data>
@@ -294,22 +294,22 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">confirmed_by_database</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="ERBB2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="KRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="FGFR4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="HRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="PI3K-Akt signaling pathway" target="FGFR2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="FRS2-mediated cascade" target="KRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="FRS2-mediated cascade" target="BioPlanet_2019" id="0">
       <data key="d2">confirmed_by_database</data>
@@ -324,16 +324,16 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">confirmed_by_database</data>
     </edge>
     <edge source="FRS2-mediated cascade" target="FGFR4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="FRS2-mediated cascade" target="HRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="FRS2-mediated cascade" target="FGFR2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="Signaling by FGFR mutants" target="KRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="Signaling by FGFR mutants" target="BioPlanet_2019" id="0">
       <data key="d2">confirmed_by_database</data>
@@ -348,13 +348,13 @@ Abstract: The RAF-MEK-ERK signaling cascade is a well-characterized MAPK pathway
       <data key="d2">confirmed_by_database</data>
     </edge>
     <edge source="Signaling by FGFR mutants" target="FGFR4" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="Signaling by FGFR mutants" target="HRAS" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
     <edge source="Signaling by FGFR mutants" target="FGFR2" id="0">
-      <data key="d2">contains</data>
+      <data key="d2">involves</data>
     </edge>
   </graph>
 </graphml>

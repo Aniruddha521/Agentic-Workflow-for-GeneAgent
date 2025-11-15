@@ -10,7 +10,7 @@ def narrative_generator(state: GeneAgentOverallState) -> GeneAgentOverallState:
     api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     generator = dspy.ChainOfThought(ClaimGeneratorSignature)
     llm = dspy.LM(
-            model="huggingface/deepseek-ai/DeepSeek-R1:novita", 
+            model="huggingface/Qwen/Qwen3-Next-80B-A3B-Instruct:novita", 
             api_key=api_key
     )
     with dspy.context(lm=llm):

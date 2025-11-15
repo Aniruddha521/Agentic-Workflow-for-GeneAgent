@@ -3,41 +3,53 @@ from .feedback import Feedback
 
 class ProofReaderSignature(dspy.Signature):
     """
-    You are tasked to verify and provide feedback on the generated claims based on the context.
-    You must answer ONLY using the provided context. 
-    Do NOT use prior knowledge.
-    If in the query there is any incorrect fact, missing information, missing facts or
-    entity(e.g. genes, process, disease, domains, complex, etc) based on the context, 
-    you need to point it out and provide the feedback.
-    Also make sure that the claims are well-aligned with the context.
-    Your output must strictly follow the required JSON schema with only the fields specified below.
-    Do not include any explanations, instructions, reasoning steps, or extra fields outside this schema.
-    The output must be a valid JSON object that can be parsed by dspy.JSONAdapter.
+    You are an assistant that verifies the correctness of a generated claim using ONLY:
+    - the retrieved_context
+    - the justification
+    STRICT RULES:
+    1. You must NOT use prior knowledge. Ignore anything not present in the retrieved_context.
+    2. If the query contains any incorrect facts, contradictions, missing information, or missing / extra entities 
+       (genes, processes, diseases, domains, complexes, etc.) relative to the retrieved_context:
+       - you MUST identify them clearly
+       - you MUST provide corrective feedback in the output
+    3. All feedback must be grounded entirely in the retrieved_context.
+    4. Your output MUST strictly follow the JSON schema of the Feedback object.
+       - Do NOT add extra fields.
+       - Do NOT include explanations, reasoning steps, or instructions outside the schema.
+    5. The final output must be valid JSON that can be parsed by dspy.JSONAdapter.
+
+    Your goal: ensure that the query is fully aligned with the retrieved_context and justification, 
+    pointing out any factual errors, inconsistencies, omissions, or unsupported claims.
     """
     retrieved_context: list[str] = dspy.InputField(
             desc="""
-                The retrieved context contains relevant information that may assist in verifying and correction
-                of claims about the genes, pathways and individual features of the genes provided in the query.
-                It's is also helpful in ensuring that the claims are well-informed and based on existing knowledge.
+                A list of context passages that contain all the information allowed for verification.
+                You MUST rely exclusively on this context while checking the query.
+                If the context does not explicitly support a part of the query, you must flag it.
                 """
         )
     query: str = dspy.InputField(
             desc="""
-                The query containts a claim about one or more genes and pathways.
-                The query may turn out to be incomplete(e.g partially incorrect or fully incorrect)
-                or missing entities(e.g. genes, process, disease, domains, complex, etc) or information.
+                The generated claim that must be verified.
+                The claim may contain errors, missing entities (e.g., genes, processes,
+                diseases, domains, complexes), or incomplete information.
+                Your task is to evaluate this claim strictly against the retrieved_context.
                 """
         )
     justification: str = dspy.InputField(
             desc="""
-                The justification contains the reasoning behind the generated response.
-                Your task is to verify the claim and give feedback based on the justification 
-                and provided context.
+                The reasoning used to produce the query.
+                You must evaluate whether the justification is aligned with the retrieved_context
+                and whether it supports or contradicts the query.
                 """
         )
     response: Feedback = dspy.OutputField(
             desc="""
-            The feedback on the generated claims regarding their correctness based on the provided context.
+            The final structured feedback about the query.
+            Feedback must identify:
+              - factual correctness or incorrectness
+              - missing or unsupported entities
+              - inconsistencies between query, context, and justification
             """
         )
     
