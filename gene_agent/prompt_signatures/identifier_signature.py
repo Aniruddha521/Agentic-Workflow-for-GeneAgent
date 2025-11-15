@@ -3,7 +3,8 @@ from .entities import Entities
 
 class IdentifierSignature(dspy.Signature):
     """
-    You are tasked with generating claims from a given list of genes.
+    You are tasked to identify the genes, process and intents(e.g., pathway, disease, domain, complex.)
+    of the query given.
     Your output must strictly follow the required JSON schema with only the fields specified below.
     Do not include any explanations, instructions, reasoning steps, or extra fields outside this schema.
     The output must be a valid JSON object that can be parsed by dspy.JSONAdapter.

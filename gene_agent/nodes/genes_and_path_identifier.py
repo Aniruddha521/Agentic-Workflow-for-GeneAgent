@@ -26,8 +26,7 @@ def genes_and_path_identifier(state: GeneAgentOverallState) -> GeneAgentOverallS
     )
     state.original_process_names = process
     state.genes = response.entities.genes
+    state.intents = response.entities.intents
     
     return state
 
-
-# [huggingface/deepseek-ai/DeepSeek-V3.1:fireworks-ai] //can be used dor calling deepseek model from huggingface

@@ -3,40 +3,70 @@ from .feedback import Feedback
 
 class ProofReaderSignature(dspy.Signature):
     """
-    You are tasked to verify and provide feedback on the generated claims based on the context.
-    If in the claim there is any incorrect or missing information based on the context, you need to point it out 
-    and provide the feedback.
-    Also make sure that the claims are well-aligned with the context.
-    Your output must strictly follow the required JSON schema with only the fields specified below.
-    Do not include any explanations, instructions, reasoning steps, or extra fields outside this schema.
-    The output must be a valid JSON object that can be parsed by dspy.JSONAdapter.
+    You are an assistant that verifies the correctness and completeness of a generated claim
+    using ONLY the retrieved_context and justification.
+
+    STRICT RULES:
+
+    1. You must NOT use any prior knowledge. Only information explicitly present in the 
+       retrieved_context may be used to evaluate the query.
+
+    2. The query must be checked for:
+       - factual correctness
+       - completeness
+       - consistency with justification
+       - missing or unsupported entities
+       - incorrect relationships
+
+    3. COMPLETENESS RULE (Important):
+       If the query lists multiple entities belonging to the same relationship 
+       (e.g., "gene1, gene2, gene3 are involved in pathway X"), you MUST verify whether 
+       ALL entities in the retrieved_context that share this relationship are included.
+       
+       - If any such entity is missing from the query, the query is INCOMPLETE.
+       - An incomplete query MUST be marked incorrect.
+       - Feedback must clearly list the missing entities.
+
+       Partial lists are NOT considered correct unless the query explicitly states 
+       that it is only listing “some” entities.
+
+    4. If the query includes an entity or relationship not supported by the context, 
+       you must mark it as incorrect and explain why.
+
+    5. If the justification does not align with the query or contradicts the context,
+       you must flag the inconsistency.
+
+    6. The final output must strictly follow the Feedback JSON schema with ONLY the fields 
+       defined in the schema. Do not include reasoning outside those fields.
+
+    7. The output must be valid JSON parsable by dspy.JSONAdapter.
     """
+
     retrieved_context: list[str] = dspy.InputField(
-            desc="""
-                The retrieved context contains relevant information that may assist in verifying and correction
-                of claims about the genes, pathways and individual features of the genes provided in the query.
-                It's is also helpful in ensuring that the claims are well-informed and based on existing knowledge.
-                """
-        )
+        desc="""
+            List of factual statements used as the ONLY source of truth.
+            These statements may describe individual gene–pathway relationships.
+            You must aggregate them when checking completeness of multi-entity claims.
+        """
+    )
+
     query: str = dspy.InputField(
-            desc="""
-                The query containts a claim about one or more genes and pathways.
-                The query may turn out to be incomplete or partially incorrect or fully incorrect.
-                Your task is to generate accurate claims about their pathways
-                and individual features based on the provided genes and context.
-                """
-        )
+        desc="""
+            The generated claim to verify. It may contain correct information, incorrect 
+            information, missing entities, or incomplete grouped claims.
+        """
+    )
+
     justification: str = dspy.InputField(
-            desc="""
-                The justification contains the reasoning behind the generated claims.
-                Your task is to verify the claim and give feedback based on the justification 
-                and provided context.
-                """
-        )
+        desc="""
+            The reasoning used to form the query. You must ensure that the justification 
+            aligns with the context and supports (or contradicts) the query.
+        """
+    )
+
     response: Feedback = dspy.OutputField(
-            desc="""
-            The feedback on the generated claims regarding their correctness based on the provided context
-            and justification.
-            """
-        )
-    
+        desc="""
+            Structured feedback describing whether the query is correct and complete, 
+            and identifying any missing, incorrect, or unsupported facts.
+        """
+    )

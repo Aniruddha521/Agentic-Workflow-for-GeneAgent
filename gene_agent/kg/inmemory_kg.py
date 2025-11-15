@@ -263,3 +263,6 @@ class InMemoryKG:
 
         if open_browser:
             webbrowser.open('file://' + os.path.realpath(output_file))
+    
+    def save_graph(self, path:str):
+        nx.write_graphml(self.graph, path)

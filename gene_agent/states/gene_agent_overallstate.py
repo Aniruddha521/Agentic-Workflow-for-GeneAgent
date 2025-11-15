@@ -10,13 +10,16 @@ from .reducers import (
 
 class GeneAgentOverallState(BaseModel):
     claims: Annotated[str, not_none_reducer]
+    prev_claims: str = ""
     analytical_narrative: Annotated[str, not_none_reducer]
     original_process_names: Annotated[ProcessState, process_reducer]
     curated_context: Annotated[Any, context_reducer] = None
     pathway_context: Annotated[list, pathway_context_reducer] = None
     genes: list[str] = []
+    intents: list[str] = []
     index: Any = None
+    graph: Any = None
     results: list[dict] = []
     feedback: str = ""
-    proofreader_pass: bool = True
+    proofreader_pass: bool = False
     proofreader_count: int = 0
