@@ -22,13 +22,15 @@ class Feedback(dspy.Signature):
             The feedback must rely ONLY on the retrieved_context and justification.
             """
         )
-    is_correct: bool = dspy.OutputField( 
-            desc="""
-            True ONLY if the entire query is fully supported by the retrieved_context.
-            False if:
-                - Any entity is missing from the context
-                - Any part of the claim contradicts the context
-                - The justification does not support the query
-                - Any relationship is incomplete or partially supported
-            """
-        )
+    is_correct: bool = dspy.OutputField(
+    desc="""
+        True ONLY if the entire query is fully supported AND complete relative to the retrieved_context.
+
+        False if:
+            - Any entity mentioned in the context for the same relationship
+              is missing from the query when the query lists a group of entities.
+            - Any part of the claim contradicts the context.
+            - Any relationship is unsupported or partially supported.
+            - The justification does not align with the context.
+        """
+    )
