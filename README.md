@@ -10,7 +10,7 @@
 
 
 # Agentic Workflow for GeneAgent 🦜🔗🧬
-![Working](assets/working.gif)
+![Working](assets/new_working.gif)
 
 It is a streamlined and modular pipeline designed to extract **entities** from **biomedical claims**, gather context from multiple trusted sources, and generate accurate, verifiable, and well-structured claims using an agentic workflow.
 
